@@ -57,9 +57,6 @@ packages = ["src/eldercrank"]
 [tool.hatch.build.targets.sdist]
 include = ["src", "LICENSE", "README.md", "CONTRIBUTING.md", "SECURITY.md"]
 
-[tool.uv.sources]
-eldercrank-stripe-core = { path = "../eldercrank-stripe-core" }
-
 [dependency-groups]
 dev = [
     "hatch-vcs>=0.5.0",
