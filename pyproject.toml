@@ -1,9 +1,12 @@
 [project]
 name = "eldercrank-stripe-fastapi"
-version = "0.1.0"
+dynamic = ["version"]
 description = "FastAPI integration for the eldercrank-stripe library, providing easy webhook handling for Stripe events in FastAPI applications."
 readme = "README.md"
 authors = [
+    { name = "Shawn", email = "shawn@shawngrover.ca" }
+]
+maintainers = [
     { name = "Shawn", email = "shawn@shawngrover.ca" }
 ]
 requires-python = ">=3.13"
@@ -12,37 +15,54 @@ dependencies = [
     "fastapi>=0.128.0",
 ]
 license = {text = "MIT"}
-keywords = ["stripe", "fastapi", "webhook", "payment-processing"]
+keywords = [
+    "stripe",
+    "fastapi",
+    "webhook",
+    "payment-processing",
+    "api-integration",
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Web Environment",
     "Framework :: FastAPI",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
-    "Topic :: Software Development :: Libraries :: Python Modules"
+    "Typing :: Typed",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Office/Business :: Financial",
 ]
 
 [project.urls]
 Homepage = "https://github.com/eldercrank/stripe-fastapi"
-Repository = "https://github.com/eldercrank/stripe-fastapi"
+Documentation = "https://github.com/eldercrank/stripe-fastapi#readme"
+Repository = "https://github.com/eldercrank/stripe-fastapi.git"
+Changelog = "https://github.com/eldercrank/stripe-fastapi/releases"
+Issues = "https://github.com/eldercrank/stripe-fastapi/issues"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/eldercrank"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src"]
+include = ["src", "LICENSE", "README.md", "CONTRIBUTING.md", "SECURITY.md"]
 
 [tool.uv.sources]
 eldercrank-stripe-core = { path = "../eldercrank-stripe-core" }
 
 [dependency-groups]
 dev = [
+    "hatch-vcs>=0.5.0",
     "pre-commit>=4.5.1",
     "pytest>=9.0.2",
     "ruff>=0.15.1",
