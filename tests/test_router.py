@@ -1,7 +1,7 @@
 """Tests for the eldercrank-stripe-fastapi package."""
 
 from fastapi import FastAPI
-from eldercrank_stripe_core import StripeHandler
+from eldercrank.stripe.core import StripeHandler
 from eldercrank.stripe.fastapi import create_stripe_router
 
 

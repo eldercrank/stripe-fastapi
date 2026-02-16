@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Request, Header, HTTPException
-from eldercrank_stripe_core import StripeHandler
+from eldercrank.stripe.core import StripeHandler
 from typing import Optional
 
 
@@ -19,7 +19,7 @@ def create_stripe_router(
     Example:
         ```python
         from fastapi import FastAPI
-        from eldercrank_stripe_core import StripeHandler
+        from eldercrank.stripe.core import StripeHandler
         from eldercrank.stripe.fastapi import create_stripe_router
 
         handler = StripeHandler(api_key="sk_test_...", webhook_secret="whsec_...")
